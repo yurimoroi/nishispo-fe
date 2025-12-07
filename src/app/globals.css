@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  html,
+  body,
+  main {
+    scroll-behavior: smooth;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-notosans);
+    font-weight: normal;
+  }
+}
+
+/* Results Header */
+.results-header-dropdown svg {
+  opacity: 1;
+}
+
+/* Pagination */
+.data-pagination ul li {
+  border: 1px solid #dee2e6;
+}
+
+.data-pagination ul li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.data-pagination ul li:nth-child(n + 2) {
+  border-left: none;
+}
+
+.data-pagination ul li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+body .slick-slide > div > div {
+  display: block !important;
+}
+
+body .slick-dots {
+  position: absolute;
+  left: 0;
+  bottom: 1.1rem;
+  right: 0;
+  width: auto;
+}
+body .slick-dots li {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+body .slick-dots li button {
+  width: 0.75rem;
+  height: 0.75rem;
+  text-indent: -99999px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+body .slick-dots li button:before {
+  opacity: 0.2;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #1e1e1e;
+  border-radius: 100%;
+}
+
+.slick-dots li button:focus:before {
+  opacity: 0.2 !important;
+}
+.slick-dots li.slick-active button:focus:before {
+  opacity: 0.4 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.4 !important;
+}
+.top-page + footer {
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  body .slick-dots li button:before {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+  body .slick-dots {
+    top: 50%;
+    left: auto;
+    right: 2rem;
+    transform: translate(0, 10rem);
+  }
+}
+
+@media only screen and (min-width: 1381px) {
+  body .slick-dots {
+    left: 50%;
+    transform: translate(631%, -3.5rem);
+    right: auto;
+    top: auto;
+    margin-bottom: -10px;
+  }
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

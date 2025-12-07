@@ -1,0 +1,16 @@
+import { FormMainBlock } from "@/components/admin/trainings";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ミヤスポ事務局 - 記事投稿者研修",
+};
+
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function AdminTrainingsNewPage({ params }: PageProps) {
+  return <FormMainBlock />;
+}
